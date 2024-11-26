@@ -1,0 +1,9 @@
+.languages{
+  display: flex;
+  gap: 10px;
+}
+
+.feed-page footer{
+  display: flex;
+  justify-content: space-between;
+}
