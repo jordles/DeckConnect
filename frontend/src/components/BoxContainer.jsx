@@ -1,9 +1,11 @@
-const SquareContainer = ({children, style}) => {
+import './BoxContainer.css'
+
+const BoxContainer = ({className = 'box-container', children, style}) => {
   return (
-    <div className="box-container" style={style}>
+    <div className={className} style={style}>
       {children}
     </div>
   )
 }
 
-export default SquareContainer
+export default BoxContainer

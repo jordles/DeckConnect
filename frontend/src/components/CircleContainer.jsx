@@ -1,8 +1,8 @@
-import React from 'react'
+
 import './CircleContainer.css'
-const CircleContainer = ({children, style}) => {
+const CircleContainer = ({className = 'circle-container',children, style}) => {
   return (
-    <div className="circle-container" style={style}>
+    <div className={className} style={style}>
       {children}
     </div>
   )
