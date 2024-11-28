@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<h1>Home</h1>} />
         <Route path="/feed" element={<FeedPage />} />
       </Routes>
-      <NavBar />
+      {/* <NavBar />  general navbar with conditional for home landing page */}
     </>
   )
 }
