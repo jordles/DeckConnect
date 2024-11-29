@@ -1,6 +1,6 @@
 .box-container{
   border-radius: 10px;
-  overflow: hidden;
+  /* overflow: hidden; */
   padding: 25px;
   /* border: 2px solid black; */
 }
