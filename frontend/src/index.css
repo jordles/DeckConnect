@@ -22,6 +22,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --green: #82db82;
+  --yellow: #FFEC99;
+  --red: #FFC9C9;
+  --blue: #A5D8FF;
 }
 
 html, body {

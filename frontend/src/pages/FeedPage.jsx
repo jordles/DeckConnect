@@ -2,8 +2,14 @@ import CircleContainer from "../components/CircleContainer"
 import BoxContainer from "../components/BoxContainer"
 import './FeedPage.css'
 import {CircleFlag} from 'react-circle-flags'
-import { useState } from "react"
+import { useState} from "react"
+import BackgroundAnim from "../components/BackgroundAnim"
+
+import { useNavigate } from 'react-router-dom'
+
 const FeedPage = () => {
+
+  const navigate = useNavigate();
 
   const [openOptions, setOpenOptions] = useState(false);
 
@@ -11,7 +17,11 @@ const FeedPage = () => {
     setOpenOptions(!openOptions);
   }
   return (
+    <>
+    
+    <BackgroundAnim color="blue" title="Feed" showTitle={false}>
     <div className="feed-page">
+      
       <header>
         <div className="languages">
           <CircleContainer>
@@ -41,16 +51,16 @@ const FeedPage = () => {
       </header>
       <main>
         <div className="left">
-          <div className="leaderboard">
+          <BoxContainer className="leaderboard">
               Leaderboard
-          </div>
-          <div className="continue-learning">
+          </BoxContainer>
+          <BoxContainer className="continue-learning">
             <div>Continue Learning</div>
             <div>Deck Name</div>
-          </div>
+          </BoxContainer>
         </div>
         <div className="right">
-          <BoxContainer>
+          <BoxContainer style={{height: '100%'}}>
             <div>Daily Double</div>
             <div>Theme</div>
             <div>Difficulty</div>
@@ -58,12 +68,13 @@ const FeedPage = () => {
         </div>
       </main>
       <footer>
-        <BoxContainer> Share </BoxContainer>
-        <BoxContainer> Decks </BoxContainer>
-        <BoxContainer> Friends </BoxContainer>
+        <BoxContainer onClick={() => navigate('/share')}> Share </BoxContainer>
+        <BoxContainer onClick={() => navigate('/decks')}> Decks </BoxContainer>
+        <BoxContainer onClick={() => navigate('/friends')}> Friends </BoxContainer>
       </footer>
-  </div>
-
+    </div>
+    </BackgroundAnim>
+    </>
   )
 }
 

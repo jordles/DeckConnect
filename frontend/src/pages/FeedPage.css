@@ -11,8 +11,8 @@
 .feed-page{
   width: 100%;
   height: 100%;
-  background: white;
-  border-radius: 20px;
+  /* background: white; */
+  /* border-radius: 20px; */
   padding: 24px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -28,13 +28,13 @@
 .languages{
   display: flex;
   gap: 12px;
-  
 }
 
 .languages > div{
   transform: scale(1);
   transition: transform 0.2s ease;
   cursor: pointer;
+  border: 5px solid white;
 }
 
 .languages > div:hover{
@@ -56,7 +56,7 @@
 }
 
 .feed-page header .updates {
-  background-color: #FFC9C9;
+  background-color: var(--red);
   text-align: center;
   font-weight: 600;
   font-size: 1.2rem;
@@ -87,7 +87,7 @@
 
 .feed-page header .profile-options {
   position: absolute;
-  background-color: rgb(130, 219, 130);
+  background-color: var(--green);
   /* padding: 20px; */
   /* padding-top: 120px; */
   border-radius: 0 0 10px 10px;
@@ -143,37 +143,32 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  gap: 15px;
+  transform: scale(0.95);
 }
 
 .feed-page main .right{
   flex: 1;
-}
-
-.feed-page main .left{
-  transform: scale(0.95);
-}
-
-.feed-page main .right > div{
   transform: scale(0.95);
 }
 
 .feed-page main .left > div,
-.feed-page main .right > div{
+.feed-page main .right{
   height: 100%;
   cursor: pointer;
-  transform: scale(0.95);
   transition: transform 0.2s ease;
 }
 
-.feed-page main .left > div:hover,
-.feed-page main .right > div:hover{
+.feed-page main .left > div:hover{
+  transform: scale(1.05);
+}
+
+.feed-page main .right:hover{
   transform: scale(1);
 }
 
-
 .feed-page main .left .leaderboard{
-  background: rgb(130, 219, 130);
+  background: var(--green);
   height: 120px;
   border-radius: 10px;
   font-size: 2rem;
@@ -183,7 +178,7 @@
 }
 
 .feed-page main .left .continue-learning{
-  background: #FFEC99;
+  background: var(--yellow);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -196,7 +191,7 @@
 
 .feed-page main .right > div{
   padding: 30px 0;
-  background: #FFEC99;
+  background: var(--yellow);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -223,15 +218,16 @@
 }
 
 .feed-page footer > div{
-  background: rgb(130, 219, 130);
+  background: var(--green);
   flex: 1;
   text-align: center;
-  padding: 16px;
+  padding: 21px;
   font-size: 2rem;
   font-weight: 500;
   cursor: pointer;
   transition: transform 0.2s ease;
   transform: scale(0.95);
+  border: 5px solid white;
 }
 
 .feed-page footer > div:hover{
