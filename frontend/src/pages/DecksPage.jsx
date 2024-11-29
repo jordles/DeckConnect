@@ -4,11 +4,11 @@ import './DecksPage.css'
 const DecksPage = () => {
   return (
     <BackgroundAnim color="green" outlineColor="yellow" title="Decks">
-      <div className="feed-page">
+      <div className="decks-page">
         <header>
         </header>
         <main>
-          <div>Decks content coming soon!</div>
+          
         </main>
       </div>
     </BackgroundAnim>
