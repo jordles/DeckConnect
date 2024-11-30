@@ -50,7 +50,7 @@
 .deck-list .options{
   position: absolute;
   right: -15px;
-  bottom: -100px;
+  bottom: -90px;
   background-color: var(--yellow);
   border-radius: 50px;
   border: 5px solid white;

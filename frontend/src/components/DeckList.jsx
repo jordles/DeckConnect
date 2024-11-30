@@ -14,7 +14,7 @@ const DeckList = ({name, difficulty}) => {
     <div className="deck-list">
       <li><span>{name}</span><span>{difficulty}</span></li>
       <div className = "progress"></div>
-      <GoogleIcon icon = "settings" onClick={handleOptions}/>
+      <GoogleIcon icon = "settings" onClick={handleOptions} color= "green"/>
       <div className={`options ${openOptions ? 'open' : ''}`}>
         <GoogleIcon icon = "edit" onClick={() => console.log("edit")}/>
         <GoogleIcon icon = "delete" onClick={() => console.log("delete")}/>

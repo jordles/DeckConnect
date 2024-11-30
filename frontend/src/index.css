@@ -23,16 +23,23 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --green: #82db82;
-  --yellow: #FFEC99;
-  --red: #FFC9C9;
-  --blue: #A5D8FF;
+  --green: hsl(120, 55%, 68%);
+  --yellow: hsl(49, 100%, 80%);
+  --red: hsl(0, 100%, 89%);
+  --blue: hsl(206, 100%, 82%);
+  --teal: hsl(162, 78%, 77%);
+  --orange: hsl(33, 100%, 83%);
+  --pink: hsl(338, 91%, 87%);
+  
   
   /* Lighter versions */
-  --green-light: #a8e7a8;
-  --yellow-light: #fff2b8;
+  --green-light: hsl(120, 57%, 78%);
+  --yellow-light: hsl(49, 100%, 86%);
   --red-light: hsl(0, 100%, 93%);
   --blue-light: hsl(207, 100%, 87%);
+  --teal-light: hsl(162, 80%, 83%);
+  --orange-light: hsl(33, 100%, 88%);
+  --pink-light: hsl(338, 92%, 89%);
 }
 
 html, body {
