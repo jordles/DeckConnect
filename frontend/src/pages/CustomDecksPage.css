@@ -1,0 +1,145 @@
+.custom-decks-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.custom-decks-page header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+}
+
+.create-deck-btn {
+  background-color: var(--yellow);
+  border: 5px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  font-size: 2.05rem;
+  transform: scale(0.95);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  gap: 20px;
+  color: inherit;
+}
+
+.create-deck-btn:hover {
+  transform: scale(1);
+}
+
+.new-deck-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.new-deck-form form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.new-deck-form input {
+  padding: 15px;
+  font-size: 1.5rem;
+  border: 3px solid var(--yellow);
+  border-radius: 8px;
+  outline: none;
+}
+
+.new-deck-form input:focus {
+  border-color: var(--green);
+}
+
+.form-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+}
+
+.form-buttons button {
+  background-color: var(--yellow);
+  border: 3px solid white;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.form-buttons button:hover {
+  transform: scale(1.05);
+}
+
+.form-buttons button:last-child {
+  background-color: var(--red);
+}
+
+.decks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+.deck-card {
+  background-color: white;
+  border: 5px solid var(--yellow);
+  border-radius: 15px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.deck-card h3 {
+  font-size: 2rem;
+  margin: 0;
+  color: var(--green);
+}
+
+.deck-card p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.deck-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: auto;
+}
+
+.deck-actions button {
+  flex: 1;
+  background-color: var(--yellow);
+  border: 3px solid white;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.deck-actions button:hover {
+  transform: scale(1.05);
+}
+
+.deck-actions button:last-child {
+  background-color: var(--green);
+}
