@@ -23,7 +23,9 @@ const DecksPage = () => {
           <div onClick={() => navigate('/custom-decks')}>
             Custom Decks <GoogleIcon icon="add" size="32px"/>
           </div>
-          <div>Premade Decks <GoogleIcon icon="add" size="32px"/></div>
+          <div onClick={() => navigate('/premade-decks')}>
+            Premade Decks <GoogleIcon icon="add" size="32px"/>
+          </div>
           <div>Import Deck <GoogleIcon icon="add" size="32px"/></div>
           <div>Create Deck <GoogleIcon icon="add" size="32px"/></div>
           <div onClick={() => setIsSearchOpen(true)}>
