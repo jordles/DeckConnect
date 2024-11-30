@@ -4,6 +4,7 @@ import './App.css'
 import FeedPage from './pages/FeedPage'
 import NavBar from './components/NavBar'
 import DecksPage from './pages/DecksPage'
+import FriendsPage from './pages/FriendsPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,6 +15,8 @@ function App() {
         <Route path="/" element={<h1>Home</h1>} />
         <Route path="/feed" element={<FeedPage />} />
         <Route path='/decks' element={<DecksPage />} />
+        <Route path='/friends' element={<FriendsPage />} />
+
       </Routes>
       {/* <NavBar />  general navbar with conditional for home landing page */}
     </>

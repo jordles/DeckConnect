@@ -27,6 +27,12 @@
   --yellow: #FFEC99;
   --red: #FFC9C9;
   --blue: #A5D8FF;
+  
+  /* Lighter versions */
+  --green-light: #a8e7a8;
+  --yellow-light: #fff2b8;
+  --red-light: hsl(0, 100%, 93%);
+  --blue-light: hsl(207, 100%, 87%);
 }
 
 html, body {

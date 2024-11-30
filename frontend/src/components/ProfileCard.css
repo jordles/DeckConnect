@@ -1,0 +1,30 @@
+.profile-card.square{
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  box-sizing: border-box;
+}
+
+.profile-card.circle{
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.profile-card img{
+  display: block;
+  width: 60px;
+  height: 60px ;
+  object-fit: contain;
+}
+
+.profile-card div {
+  font-size: 0.9rem;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
