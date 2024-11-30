@@ -4,6 +4,7 @@ import { russianDeck } from '../data/russianDeck';
 import { spanishDeck } from '../data/spanishDeck';
 import { mandarinDeck } from '../data/mandarinDeck';
 import { hindiDeck } from '../data/hindiDeck';
+import { bengaliDeck } from '../data/bengaliDeck';
 import GoogleIcon from "../components/GoogleIcon";
 import './PremadeDecksPage.css';
 
@@ -16,7 +17,8 @@ const PremadeDecksPage = () => {
     { name: "Russian Basics", deck: russianDeck, difficulty: "Beginner", language: "Russian" },
     { name: "Spanish Essentials", deck: spanishDeck, difficulty: "Beginner", language: "Spanish" },
     { name: "Mandarin Essentials", deck: mandarinDeck, difficulty: "Beginner", language: "Mandarin" },
-    { name: "Hindi Essentials", deck: hindiDeck, difficulty: "Beginner", language: "Hindi" }
+    { name: "Hindi Essentials", deck: hindiDeck, difficulty: "Beginner", language: "Hindi" },
+    { name: "Bengali Essentials", deck: bengaliDeck, difficulty: "Beginner", language: "Bengali" }
   ];
 
   const handleDeckSelect = (deck) => {
@@ -52,11 +54,8 @@ const PremadeDecksPage = () => {
         <div className="flashcard-inner">
           <div className="flashcard-front">
             <h2>{card.Question}</h2>
-            {selectedDeck.language === "Mandarin" && (
-              <p className="pinyin">{card.Pinyin}</p>
-            )}
-            {selectedDeck.language === "Hindi" && (
-              <p className="transliteration">{card.Transliteration}</p>
+            {(selectedDeck.language === "Mandarin" || selectedDeck.language === "Hindi" || selectedDeck.language === "Bengali") && (
+              <p className="transliteration">{card.Transliteration || card.Pinyin}</p>
             )}
           </div>
           <div className="flashcard-back">
