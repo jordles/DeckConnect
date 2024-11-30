@@ -1,7 +1,7 @@
 # DeckConnect
 
 ## Overview
-DeckConnect is a modern web application for managing and organizing flash card decks for language learning. It provides functionality for both premade and custom deck management with an intuitive user interface.
+DeckConnect is a modern web application for managing and organizing flash card decks for language learning. It provides functionality for both premade and custom deck management with an intuitive user interface.  
 [Demo](https://deckconnect.netlify.app/)
 
 
