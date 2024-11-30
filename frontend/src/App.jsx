@@ -13,7 +13,7 @@ import EditDeckPage from './pages/EditDeckPage'
 import PracticeDeckPage from './pages/PracticeDeckPage'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>  
@@ -30,7 +30,7 @@ function App() {
       </Routes>
       {/* <NavBar />  general navbar with conditional for home landing page */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
