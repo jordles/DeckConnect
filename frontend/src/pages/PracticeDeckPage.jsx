@@ -30,6 +30,31 @@ const PracticeDeckPage = () => {
     }
   }, [deckId, navigate]);
 
+  // Render media preview
+  const renderMediaPreview = (media) => {
+    if (!media) return null;
+
+    const { type, src, name } = media;
+
+    return (
+      <div className="card-media-preview">
+        {type === 'image' && (
+          <img src={src} alt={name} className="media-preview-img" />
+        )}
+        {type === 'audio' && (
+          <audio controls src={src} className="media-preview-audio">
+            Your browser does not support the audio element.
+          </audio>
+        )}
+        {type === 'video' && (
+          <video controls src={src} className="media-preview-video">
+            Your browser does not support the video element.
+          </video>
+        )}
+      </div>
+    );
+  };
+
   // Handle card flip
   const handleCardFlip = () => {
     setIsFlipped(!isFlipped);
@@ -69,6 +94,7 @@ const PracticeDeckPage = () => {
             <div className="card-front">
               <div className="card-content">
                 <h2>Question</h2>
+                {renderMediaPreview(currentCard.Media)}
                 <p>{currentCard.Question}</p>
                 {currentCard.Transliteration && (
                   <p className="transliteration">{currentCard.Transliteration}</p>
@@ -82,6 +108,7 @@ const PracticeDeckPage = () => {
             <div className="card-back">
               <div className="card-content">
                 <h2>Answer</h2>
+                {renderMediaPreview(currentCard.Media)}
                 <p>{currentCard.Answer}</p>
               </div>
               <div className="card-actions">

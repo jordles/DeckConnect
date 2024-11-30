@@ -120,25 +120,124 @@
 
 .editor-actions {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
   margin-top: 20px;
+  margin-bottom: 15px;
 }
 
-button {
+.editor-actions button {
+  flex: 0 0 auto;
+  width: 150px;
   padding: 10px 15px;
-  background-color: #4CAF50;
-  color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.editor-actions button:first-child {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.editor-actions button:nth-child(2) {
+  background-color: #3498db;
+  color: white;
+}
+
+.editor-actions button:last-child {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.editor-actions button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.editor-actions button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.media-upload-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.media-upload-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.media-upload-buttons button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #45a049;
+.upload-image-btn {
+  background-color: #3498db;
+  color: white;
 }
 
-button:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
+.upload-audio-btn {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.upload-video-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.media-upload-buttons button:hover {
+  opacity: 0.9;
+}
+
+.media-preview {
+  position: relative;
+  max-width: 300px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.remove-media-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.media-preview-img, 
+.media-preview-video {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.media-preview-audio {
+  width: 100%;
+  margin-top: 10px;
 }
