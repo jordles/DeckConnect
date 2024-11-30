@@ -1,0 +1,98 @@
+.landing-page{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.landing-page main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  gap: 20px;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes snapRotateFront {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(7deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes snapRotateBack {
+  0% {
+    transform: rotate(0deg);
+    left: 0;
+  }
+  1% {
+    left: -30px;
+  }
+  30% {
+    transform: rotate(-7deg);
+    left: -30px;
+  }
+  100% {
+    transform: rotate(-5deg);
+    left: -30px;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-20px) scale(1.1);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.landing-page main .logo{
+  animation: scaleIn 2s ease-in-out forwards;
+}
+
+.landing-page main .front{
+  /* font-family: 'Knewave', sans-serif;  */
+  font-size: 2.5rem;
+  transform: rotate(0);
+  animation: snapRotateFront 0.3s cubic-bezier(.17,.67,.83,.67) forwards;
+  animation-delay: 3s;
+}
+
+.landing-page main .back{
+  left: 0;
+  transform: rotate(0);
+  animation: snapRotateBack 0.3s cubic-bezier(.17,.67,.83,.67) forwards;
+  animation-delay: 3s;
+}
+
+.landing-page main .front, .landing-page main .back{
+  /* height: 155px;
+  width: 100px; */
+  height: 285px;
+  width: 200px;
+}
+
+.landing-page main .slogan{
+  font-size: 1.5rem;
+  opacity: 0;
+  animation: slideDown 0.5s ease-out forwards;
+  animation-delay: 3.5s; /* 3s for logo animations + 0.5s buffer */
+}

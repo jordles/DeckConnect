@@ -4,7 +4,7 @@ import './FeedPage.css'
 import {CircleFlag} from 'react-circle-flags'
 import { useState} from "react"
 import BackgroundAnim from "../components/BackgroundAnim"
-
+import ProfileCard from "../components/ProfileCard"
 import { useNavigate } from 'react-router-dom'
 
 const FeedPage = () => {
@@ -36,15 +36,13 @@ const FeedPage = () => {
         </BoxContainer>
         <div className="profile-container">
           <button className="profile" onClick={handleProfileClick}>
-            <CircleContainer style={{width: '126px', height: '126px'}}>
-              <img src="https://via.placeholder.com/126" alt="Profile" />
-            </CircleContainer>
+            <ProfileCard size="130px"/>
           </button>
           <div className={`profile-options ${openOptions ? 'open' : ''}`}>
             <div>About</div>
             <div>Options</div>
             <div>Stats</div>
-            <div>Logout</div>
+            <div onClick ={() => navigate('/')}>Logout</div>
           </div>
         </div>
         

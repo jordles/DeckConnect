@@ -1,0 +1,28 @@
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  padding: 0 25px;
+}
+
+.navbar > *{
+  transform: scale(0.95);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.navbar > *:hover{
+  transform: scale(1);
+}
+
+.navbar .login{
+  background-color: var(--blue);
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 5px solid white;
+}
+
+.navbar .login:hover{
+  background-color: var(--yellow);
+}

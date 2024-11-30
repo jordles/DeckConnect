@@ -1,12 +1,21 @@
-import { useNavigate } from 'react-router-dom';
-import Button from './Button';
+import Logo from './Logo';
 import './NavBar.css';
+import { Link } from 'react-router-dom';
+const NavBar = () => {
 
-function NavBar() {
-  const navigate = useNavigate();
+  return (
+    <nav className = "navbar">
+      <Link to = "/" style={{color: 'black', textDecoration: 'none'}}>
+        <Logo />
+      </Link>
+      <Link to = "/feed" style={{color: 'black', textDecoration: 'none'}}>
+        <div className="login">Login</div>
+      </Link>
+    </nav>
+  )
+}
 
-
-  
+export default NavBar;
 
   // const navButtonStyle = {
   //   backgroundColor: 'transparent',
@@ -36,6 +45,3 @@ function NavBar() {
   //     </Button>
   //   </nav>
   // );
-}
-
-export default NavBar;
