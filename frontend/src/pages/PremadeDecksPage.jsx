@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import BackgroundAnim from "../components/BackgroundAnim";
-import { russianDeck } from '../data/russianDeck';
+// import { russianDeck } from '../data/russianDeck';
 import { spanishDeck } from '../data/spanishDeck';
 import { mandarinDeck } from '../data/mandarinDeck';
 import { hindiDeck } from '../data/hindiDeck';
 import { bengaliDeck } from '../data/bengaliDeck';
 import { intermediateSpanishDeck } from '../data/intermediateSpanishDeck';
+import { intermediateMandarin } from '../data/intermediateMandarin';
+import { intermediateHindiDeck } from '../data/intermediateHindiDeck';
+import { intermediateBengaliDeck } from '../data/intermediateBengaliDeck';
 import GoogleIcon from "../components/GoogleIcon";
 import './PremadeDecksPage.css';
 
@@ -15,7 +18,7 @@ const PremadeDecksPage = () => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const premadeDecks = [
-    { name: "Russian Basics", deck: russianDeck, difficulty: "Beginner", language: "Russian" },
+    // { name: "Russian Basics", deck: russianDeck, difficulty: "Beginner", language: "Russian" },
     { name: "Spanish Essentials", deck: spanishDeck, difficulty: "Beginner", language: "Spanish" },
     { name: "Mandarin Essentials", deck: mandarinDeck, difficulty: "Beginner", language: "Mandarin" },
     { name: "Hindi Essentials", deck: hindiDeck, difficulty: "Beginner", language: "Hindi" },
@@ -25,6 +28,24 @@ const PremadeDecksPage = () => {
       deck: intermediateSpanishDeck,
       difficulty: "Intermediate",
       language: "Spanish"
+    },
+    {
+      name: "Intermediate Mandarin",
+      deck: intermediateMandarin,
+      difficulty: "Intermediate",
+      language: "Mandarin"
+    },
+    {
+      name: "Intermediate Hindi",
+      deck: intermediateHindiDeck,
+      difficulty: "Intermediate", 
+      language: "Hindi"
+    },
+    {
+      name: "Intermediate Bengali",
+      deck: intermediateBengaliDeck,
+      difficulty: "Intermediate", 
+      language: "Bengali"
     }
   ];
 
