@@ -1,0 +1,69 @@
+.friends-page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.friends-page header {
+  height: 85px;
+  display: flex;
+  width: 100%;
+  gap: 15px;
+}
+
+.friends-page header > *{
+  border: 5px solid white;
+}
+
+.friends-page header .profile-card{
+  position: relative;
+}
+
+.friends-page header .material-symbols-rounded {
+  border-radius: 50%;
+  padding: 5px;
+  position: absolute;
+  border: 5px solid white;
+  transform: scale(0.9);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.friends-page header .material-symbols-rounded:hover {
+  transform: scale(1);
+}
+
+.friends-page header span:first-of-type{
+  left: -20px;
+  bottom: -20px;
+}
+
+.friends-page header span:last-of-type{
+  right: -20px;
+  bottom: -20px;
+}
+
+.friends-page main{
+
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.friends-page main .profile-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.friends-page main .profile-grid > *{
+  border: 5px solid white;
+  transform: scale(0.95);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.friends-page main .profile-grid > *:hover{
+  transform: scale(1);
+}

@@ -1,0 +1,85 @@
+.decks-page{
+  height: 100%;
+  display: flex;
+}
+
+.decks-page .deck-selection{
+  background: var(--green);
+  height: 120px;
+  
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.decks-page .deck-selection{
+  border: 5px solid white;
+  border-radius: 10px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    left                                    */
+/* -------------------------------------------------------------------------- */
+
+.decks-page .left{
+  margin-top: 150px;
+  width: 30.5%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.decks-page .left > div{
+  background-color: var(--yellow);
+  border: 5px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  font-size: 2.05rem;
+  transform: scale(0.95);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.decks-page .left > div:last-child{
+  background-color: var(--red);
+}
+
+.decks-page .left > div:hover{
+  transform: scale(1);
+}
+
+.decks-page .left .material-symbols-outlined{
+  font-size: 50px;
+}
+/* -------------------------------------------------------------------------- */
+/*                                    right                                   */
+/* -------------------------------------------------------------------------- */
+
+.decks-page .right{
+  width: 68%;
+  margin-left: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.decks-page .right main{
+  overflow-y: auto;
+  scrollbar-width: none;
+  
+}
+
+.decks-page .right main ul{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 20px;
+
+}

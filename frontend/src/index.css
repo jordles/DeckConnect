@@ -1,32 +1,80 @@
-*{
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Excalifont';
+  src: url('fonts/Excalifont-Regular.woff2') format('woff2'),
+      url('fonts/Excalifont-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Excalifont", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  /* color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424; */
-
+  background-color: black;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  --green: hsl(120, 55%, 68%);
+  --yellow: hsl(49, 100%, 80%);
+  --red: hsl(0, 100%, 89%);
+  --blue: hsl(206, 100%, 82%);
+  --teal: hsl(162, 78%, 77%);
+  --orange: hsl(33, 100%, 83%);
+  --pink: hsl(338, 91%, 87%);
+  
+  
+  /* Lighter versions */
+  --green-light: hsl(120, 57%, 78%);
+  --yellow-light: hsl(49, 100%, 86%);
+  --red-light: hsl(0, 100%, 93%);
+  --blue-light: hsl(207, 100%, 87%);
+  --teal-light: hsl(162, 80%, 83%);
+  --orange-light: hsl(33, 100%, 88%);
+  --pink-light: hsl(338, 92%, 89%);
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body { 
+  margin: 0;
   text-align: center;
-}
-
-body {
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-[class*='flag-circle'], [class^='flag-circle'] {
+#root {
+  max-width: 1440px;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 40px;
+}
+
+
+/* html, body{
+  height: 100vh;
+} */
+
+/* body{
+  margin: auto;
+} */
+
+[class*='flag-circle'], [class^='flag-circle'] { /* unused */
   width: 100px;
   display: flex;
   align-items: center;
@@ -36,7 +84,6 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
 
 @media (prefers-color-scheme: light) {
   :root {

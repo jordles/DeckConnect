@@ -1,0 +1,33 @@
+
+.logo{
+  position: relative;
+}
+
+.logo > *{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo .front, .logo .back{
+  aspect-ratio: 1/1;
+  background-color: var(--blue);
+  padding: 5px;
+  border-radius: 10px;
+  border: 5px solid white;
+  
+}
+
+.logo .front{
+  transform: rotate(5deg)
+}
+.logo .back{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: -10px;
+  border: 5px solid var(--blue);
+  background-color: unset;
+  transform: rotate(-5deg)
+}

@@ -1,41 +1,78 @@
 import CircleContainer from "../components/CircleContainer"
 import BoxContainer from "../components/BoxContainer"
 import './FeedPage.css'
-import { US, ES } from 'country-flag-icons/react/3x2'
+import {CircleFlag} from 'react-circle-flags'
+import { useState} from "react"
+import BackgroundAnim from "../components/BackgroundAnim"
+import ProfileCard from "../components/ProfileCard"
+import { useNavigate } from 'react-router-dom'
+
 const FeedPage = () => {
+
+  const navigate = useNavigate();
+
+  const [openOptions, setOpenOptions] = useState(false);
+
+  const handleProfileClick = () => {
+    setOpenOptions(!openOptions);
+  }
   return (
+    <>
+    
+    <BackgroundAnim color="blue" title="Feed" showTitle={false}>
     <div className="feed-page">
-      <h1>Feed</h1>
+      
       <header>
         <div className="languages">
           <CircleContainer>
-            <div className="flag-circle">
-              <US />  
-            </div>
+            <CircleFlag countryCode="us" height="100%"/>
           </CircleContainer>
           <CircleContainer>
-            <div className="flag-circle">
-              <ES />
-            </div>
+            <CircleFlag countryCode="es" height="100%"/>
           </CircleContainer>
         </div>
-        <div className="updates">
-          <BoxContainer>
-            Day 2 Streak
-          </BoxContainer>
+        <BoxContainer className="box-container updates" style={{padding: '10px'}}>
+          🔥 Day 2 Streak 🔥
+        </BoxContainer>
+        <div className="profile-container">
+          <button className="profile" onClick={handleProfileClick}>
+            <ProfileCard size="130px"/>
+          </button>
+          <div className={`profile-options ${openOptions ? 'open' : ''}`}>
+            <div>About</div>
+            <div>Options</div>
+            <div>Stats</div>
+            <div onClick ={() => navigate('/')}>Logout</div>
+          </div>
         </div>
+        
       </header>
       <main>
-
+        <div className="left">
+          <BoxContainer className="leaderboard">
+              Leaderboard
+          </BoxContainer>
+          <BoxContainer className="continue-learning">
+            <div>Continue Learning</div>
+            <div>Deck Name</div>
+          </BoxContainer>
+        </div>
+        <div className="right">
+          <BoxContainer style={{height: '100%'}}>
+            <div>Daily Double</div>
+            <div>Theme</div>
+            <div>Difficulty</div>
+          </BoxContainer>
+        </div>
       </main>
       <footer>
-        <BoxContainer> Share </BoxContainer>
-        <BoxContainer> Decks </BoxContainer>
-        <BoxContainer> Friends </BoxContainer>
+        <BoxContainer onClick={() => navigate('/share')}> Share </BoxContainer>
+        <BoxContainer onClick={() => navigate('/decks')}> Decks </BoxContainer>
+        <BoxContainer onClick={() => navigate('/friends')}> Friends </BoxContainer>
       </footer>
     </div>
-    
-
+    </BackgroundAnim>
+    </>
   )
 }
 

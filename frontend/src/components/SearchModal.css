@@ -1,0 +1,123 @@
+.search-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.search-modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.search-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-modal-header h2 {
+  font-size: 2rem;
+  margin: 0;
+  color: var(--green);
+}
+
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.close-button:hover {
+  transform: scale(1.1);
+}
+
+.search-input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 3px solid var(--yellow);
+}
+
+.search-input-container input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.2rem;
+  padding: 10px;
+}
+
+.search-filters {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #f8f9fa;
+  border: 2px solid transparent;
+}
+
+.filter-option:hover {
+  background-color: #e9ecef;
+}
+
+.filter-option.active {
+  background-color: var(--yellow);
+  border-color: white;
+}
+
+.filter-option input {
+  display: none;
+}
+
+.search-button {
+  background-color: var(--yellow);
+  border: 3px solid white;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.search-button:hover {
+  transform: scale(1.02);
+}

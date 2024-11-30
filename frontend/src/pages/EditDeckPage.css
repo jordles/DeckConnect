@@ -1,0 +1,261 @@
+.edit-deck-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+  min-height: 100vh;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.saved-card-alert {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out, fadeOut 0.3s ease-in 1.7s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.edit-deck-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-navigation {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.edit-deck-content {
+  display: flex;
+  flex-grow: 1;
+  gap: 20px;
+}
+
+.card-preview {
+  flex: 1;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.preview-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.transliteration {
+  color: #666;
+  font-style: italic;
+}
+
+.card-editor {
+  flex: 1.5;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-grow: 1;
+}
+
+.editor-inputs label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.editor-inputs textarea {
+  min-height: 100px;
+  resize: vertical;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.editor-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.editor-actions button {
+  flex: 0 0 auto;
+  width: 150px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.editor-actions button:first-child {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.editor-actions button:nth-child(2) {
+  background-color: #3498db;
+  color: white;
+}
+
+.editor-actions button:last-child {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.editor-actions button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.editor-actions button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.media-upload-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.media-upload-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.media-upload-buttons button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-image-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.upload-audio-btn {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.upload-video-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.media-upload-buttons button:hover {
+  opacity: 0.9;
+}
+
+.media-preview {
+  position: relative;
+  max-width: 300px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.remove-media-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.media-preview-img, 
+.media-preview-video {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.media-preview-audio {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.back-to-decks-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-decks-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
