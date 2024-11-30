@@ -1,114 +1,131 @@
-import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { FaEdit, FaTrash, FaPlay } from 'react-icons/fa';
 import BackgroundAnim from "../components/BackgroundAnim"
-import './CustomDecksPage.css'
 import GoogleIcon from "../components/GoogleIcon"
+import './CustomDecksPage.css';
 
 const CustomDecksPage = () => {
   const navigate = useNavigate();
-  const [decks, setDecks] = useState(() => {
-    // Initialize from localStorage, or empty array if no decks exist
-    const savedDecks = localStorage.getItem('customDecks');
-    return savedDecks ? JSON.parse(savedDecks) : [];
-  });
-  const [showNewDeckForm, setShowNewDeckForm] = useState(false);
-  const [newDeckName, setNewDeckName] = useState('');
-  const [newDeckLanguage, setNewDeckLanguage] = useState('');
+  const [customDecks, setCustomDecks] = useState([]);
 
-  // Save decks to localStorage whenever they change
-  useEffect(() => {
-    localStorage.setItem('customDecks', JSON.stringify(decks));
-  }, [decks]);
-
-  const handleCreateDeck = (e) => {
-    e.preventDefault();
-    if (newDeckName && newDeckLanguage) {
-      const newDeck = {
-        id: Date.now(),
-        name: newDeckName,
-        language: newDeckLanguage,
-        cards: []
-      };
-      setDecks(prevDecks => [...prevDecks, newDeck]);
-      setNewDeckName('');
-      setNewDeckLanguage('');
-      setShowNewDeckForm(false);
-    }
+  // Load custom decks from localStorage
+  const loadCustomDecks = () => {
+    const savedDecks = JSON.parse(localStorage.getItem('customDecks') || '[]');
+    setCustomDecks(savedDecks);
   };
 
+  // Initial load and set up storage event listener
+  useEffect(() => {
+    // Load decks initially
+    loadCustomDecks();
+
+    // Listen for storage changes (useful for cross-tab synchronization)
+    const handleStorageChange = (e) => {
+      if (e.key === 'customDecks') {
+        loadCustomDecks();
+      }
+    };
+
+    // Add event listener for storage changes
+    window.addEventListener('storage', handleStorageChange);
+
+    // Cleanup listener
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, []);
+
+  // Create a new deck
+  const handleCreateNewDeck = () => {
+    const newDeck = {
+      id: Date.now(), // Use timestamp as unique ID
+      name: `Custom Deck ${customDecks.length + 1}`,
+      cards: [
+        {
+          Question: 'Initial Question',
+          Answer: 'Initial Answer',
+          Transliteration: 'Initial Transliteration'
+        }
+      ]
+    };
+
+    const updatedDecks = [...customDecks, newDeck];
+    localStorage.setItem('customDecks', JSON.stringify(updatedDecks));
+    setCustomDecks(updatedDecks);
+    
+    // Navigate to edit the new deck
+    navigate(`/edit-deck/${newDeck.id}`);
+  };
+
+  // Edit an existing deck
   const handleEditDeck = (deckId) => {
     navigate(`/edit-deck/${deckId}`);
   };
 
+  // Practice a deck
   const handlePracticeDeck = (deckId) => {
     navigate(`/practice-deck/${deckId}`);
   };
 
+  // Delete a deck
+  const handleDeleteDeck = (deckIdToDelete) => {
+    const updatedDecks = customDecks.filter(deck => deck.id !== deckIdToDelete);
+    localStorage.setItem('customDecks', JSON.stringify(updatedDecks));
+    setCustomDecks(updatedDecks);
+  };
+
   return (
     <BackgroundAnim color="green" outlineColor="yellow" title="Custom Decks">
-      <div className="custom-decks-page">
-        <header>
-          <button 
-            className="create-deck-btn"
-            onClick={() => setShowNewDeckForm(true)}
-          >
-            Create New Deck <GoogleIcon icon="add" size="32px"/>
-          </button>
-        </header>
+      <div className="custom-decks-container">
+        <h1>My Custom Decks</h1>
+        
+        <button 
+          className="create-deck-btn" 
+          onClick={handleCreateNewDeck}
+        >
+          Create New Deck <GoogleIcon icon="add" size="32px"/>
+        </button>
 
-        {showNewDeckForm && (
-          <div className="new-deck-form">
-            <form onSubmit={handleCreateDeck}>
-              <input
-                type="text"
-                placeholder="Deck Name"
-                value={newDeckName}
-                onChange={(e) => setNewDeckName(e.target.value)}
-                required
-              />
-              <input
-                type="text"
-                placeholder="Language"
-                value={newDeckLanguage}
-                onChange={(e) => setNewDeckLanguage(e.target.value)}
-                required
-              />
-              <div className="form-buttons">
-                <button type="submit">Create</button>
-                <button 
-                  type="button" 
-                  onClick={() => setShowNewDeckForm(false)}
-                >
-                  Cancel
-                </button>
-              </div>
-            </form>
+        {customDecks.length === 0 ? (
+          <div className="no-decks-message">
+            <p>You haven't created any custom decks yet.</p>
+            <p>Click "Create New Deck" to get started!</p>
           </div>
-        )}
-
-        <main>
+        ) : (
           <div className="decks-grid">
-            {decks.map(deck => (
+            {customDecks.map((deck) => (
               <div key={deck.id} className="deck-card">
-                <h3>{deck.name}</h3>
-                <p>{deck.language}</p>
-                <p>{deck.cards ? deck.cards.length : 0} cards</p>
+                <h2>{deck.name}</h2>
+                <p>{deck.cards ? deck.cards.length : 0} Cards</p>
                 <div className="deck-actions">
-                  <button onClick={() => handleEditDeck(deck.id)}>Edit Cards</button>
                   <button 
+                    className="practice-btn" 
                     onClick={() => handlePracticeDeck(deck.id)}
-                    disabled={deck.cards.length === 0}
+                    disabled={!deck.cards || deck.cards.length === 0}
                   >
-                    Practice
+                    <FaPlay /> Practice
+                  </button>
+                  <button 
+                    className="edit-btn" 
+                    onClick={() => handleEditDeck(deck.id)}
+                  >
+                    <FaEdit /> Edit
+                  </button>
+                  <button 
+                    className="delete-btn" 
+                    onClick={() => handleDeleteDeck(deck.id)}
+                  >
+                    <FaTrash /> Delete
                   </button>
                 </div>
               </div>
             ))}
           </div>
-        </main>
+        )}
       </div>
     </BackgroundAnim>
-  )
-}
+  );
+};
 
-export default CustomDecksPage
+export default CustomDecksPage;
