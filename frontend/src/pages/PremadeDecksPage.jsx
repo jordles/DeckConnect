@@ -5,6 +5,7 @@ import { spanishDeck } from '../data/spanishDeck';
 import { mandarinDeck } from '../data/mandarinDeck';
 import { hindiDeck } from '../data/hindiDeck';
 import { bengaliDeck } from '../data/bengaliDeck';
+import { intermediateSpanishDeck } from '../data/intermediateSpanishDeck';
 import GoogleIcon from "../components/GoogleIcon";
 import './PremadeDecksPage.css';
 
@@ -18,7 +19,13 @@ const PremadeDecksPage = () => {
     { name: "Spanish Essentials", deck: spanishDeck, difficulty: "Beginner", language: "Spanish" },
     { name: "Mandarin Essentials", deck: mandarinDeck, difficulty: "Beginner", language: "Mandarin" },
     { name: "Hindi Essentials", deck: hindiDeck, difficulty: "Beginner", language: "Hindi" },
-    { name: "Bengali Essentials", deck: bengaliDeck, difficulty: "Beginner", language: "Bengali" }
+    { name: "Bengali Essentials", deck: bengaliDeck, difficulty: "Beginner", language: "Bengali" },
+    {
+      name: "Intermediate Spanish",
+      deck: intermediateSpanishDeck,
+      difficulty: "Intermediate",
+      language: "Spanish"
+    }
   ];
 
   const handleDeckSelect = (deck) => {
