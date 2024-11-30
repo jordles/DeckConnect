@@ -46,7 +46,7 @@ npm start
 
 ### UI Components
 [Material Symbols Rounded - By Google](https://fonts.google.com/icons) - icon library   
-[React Icons](https://www.npmjs.com/package/react-icons) - icon library we will use   
+[React Icons](https://www.npmjs.com/package/react-icons) - icon library   
 [Country Flag Icons](https://www.npmjs.com/package/country-flag-icons) - country flag icons  
 [React Rounded Flags](https://www.npmjs.com/package/react-circle-flags) - country flag icons rounded  
 
@@ -65,4 +65,7 @@ frontend/
 3. Commit your changes
 4. Push to the branch
 5. Open a Pull Request
+
+## Attribution
+[Profile Images](https://avatar-placeholder.iran.liara.run/)
 
