@@ -14,6 +14,7 @@ const EditDeckPage = () => {
     Answer: '',
     Transliteration: ''
   });
+  const [savedCardAlert, setSavedCardAlert] = useState(false);
 
   // Load deck from localStorage on component mount
   useEffect(() => {
@@ -40,6 +41,17 @@ const EditDeckPage = () => {
       navigate('/custom-decks');
     }
   }, [deckId, navigate]);
+
+  // Handle alert display
+  useEffect(() => {
+    if (savedCardAlert) {
+      const timer = setTimeout(() => {
+        setSavedCardAlert(false);
+      }, 2000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [savedCardAlert]);
 
   // Save changes to localStorage
   const saveDecksToLocalStorage = (updatedDecks) => {
@@ -79,6 +91,9 @@ const EditDeckPage = () => {
       const updatedDeck = {...deck};
       updatedDeck.cards[currentCardIndex] = editedCard;
       setDeck(updatedDeck);
+
+      // Show saved card alert
+      setSavedCardAlert(true);
     }
   };
 
@@ -144,6 +159,13 @@ const EditDeckPage = () => {
 
   return (
     <div className="edit-deck-container">
+      {/* Saved Card Alert */}
+      {savedCardAlert && (
+        <div className="saved-card-alert">
+          Card Saved Successfully!
+        </div>
+      )}
+
       <div className="edit-deck-navigation">
         <button onClick={() => navigate('/custom-decks')}>Back to Decks</button>
         <div className="card-navigation">
