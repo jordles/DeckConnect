@@ -3,6 +3,7 @@ import BackgroundAnim from "../components/BackgroundAnim";
 import { russianDeck } from '../data/russianDeck';
 import { spanishDeck } from '../data/spanishDeck';
 import { mandarinDeck } from '../data/mandarinDeck';
+import { hindiDeck } from '../data/hindiDeck';
 import GoogleIcon from "../components/GoogleIcon";
 import './PremadeDecksPage.css';
 
@@ -14,7 +15,8 @@ const PremadeDecksPage = () => {
   const premadeDecks = [
     { name: "Russian Basics", deck: russianDeck, difficulty: "Beginner", language: "Russian" },
     { name: "Spanish Essentials", deck: spanishDeck, difficulty: "Beginner", language: "Spanish" },
-    { name: "Mandarin Essentials", deck: mandarinDeck, difficulty: "Beginner", language: "Mandarin" }
+    { name: "Mandarin Essentials", deck: mandarinDeck, difficulty: "Beginner", language: "Mandarin" },
+    { name: "Hindi Essentials", deck: hindiDeck, difficulty: "Beginner", language: "Hindi" }
   ];
 
   const handleDeckSelect = (deck) => {
@@ -52,6 +54,9 @@ const PremadeDecksPage = () => {
             <h2>{card.Question}</h2>
             {selectedDeck.language === "Mandarin" && (
               <p className="pinyin">{card.Pinyin}</p>
+            )}
+            {selectedDeck.language === "Hindi" && (
+              <p className="transliteration">{card.Transliteration}</p>
             )}
           </div>
           <div className="flashcard-back">

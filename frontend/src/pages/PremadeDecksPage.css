@@ -128,7 +128,8 @@
   font-size: 2em;
 }
 
-.flashcard .pinyin {
+.flashcard .pinyin,
+.flashcard .transliteration {
   font-size: 1.2em;
   color: #666;
   margin-top: 10px;
