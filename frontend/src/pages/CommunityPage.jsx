@@ -1,10 +1,10 @@
 import BackgroundAnim from '../components/BackgroundAnim'
-import './SharePage.css'
+import './CommunityPage.css'
 
-const SharePage = () => {
+const CommunityPage = () => {
   return (
     <BackgroundAnim color="teal" outlineColor="pink" title="Community" >
-      <div className="share-page">
+      <div className="community-page">
         <header>
         </header>
       </div>
@@ -12,4 +12,4 @@ const SharePage = () => {
   )
 }
 
-export default SharePage
+export default CommunityPage
