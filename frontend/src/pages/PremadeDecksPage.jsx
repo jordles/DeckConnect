@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import BackgroundAnim from "../components/BackgroundAnim";
 import { russianDeck } from '../data/russianDeck';
+import { spanishDeck } from '../data/spanishDeck';
+import { mandarinDeck } from '../data/mandarinDeck';
 import GoogleIcon from "../components/GoogleIcon";
 import './PremadeDecksPage.css';
 
@@ -11,7 +13,8 @@ const PremadeDecksPage = () => {
 
   const premadeDecks = [
     { name: "Russian Basics", deck: russianDeck, difficulty: "Beginner", language: "Russian" },
-    // Add more premade decks here
+    { name: "Spanish Essentials", deck: spanishDeck, difficulty: "Beginner", language: "Spanish" },
+    { name: "Mandarin Essentials", deck: mandarinDeck, difficulty: "Beginner", language: "Mandarin" }
   ];
 
   const handleDeckSelect = (deck) => {
@@ -36,6 +39,27 @@ const PremadeDecksPage = () => {
 
   const handleCardFlip = () => {
     setIsFlipped(!isFlipped);
+  };
+
+  const renderCard = () => {
+    if (!selectedDeck || !selectedDeck.deck[currentCardIndex]) return null;
+    const card = selectedDeck.deck[currentCardIndex];
+    
+    return (
+      <div className={`flashcard ${isFlipped ? 'flipped' : ''}`} onClick={handleCardFlip}>
+        <div className="flashcard-inner">
+          <div className="flashcard-front">
+            <h2>{card.Question}</h2>
+            {selectedDeck.language === "Mandarin" && (
+              <p className="pinyin">{card.Pinyin}</p>
+            )}
+          </div>
+          <div className="flashcard-back">
+            <h2>{card.Answer}</h2>
+          </div>
+        </div>
+      </div>
+    );
   };
 
   return (
@@ -71,16 +95,7 @@ const PremadeDecksPage = () => {
               </div>
             </div>
             
-            <div className={`flashcard ${isFlipped ? 'flipped' : ''}`} onClick={handleCardFlip}>
-              <div className="card-inner">
-                <div className="card-front">
-                  {selectedDeck.deck[currentCardIndex].Question}
-                </div>
-                <div className="card-back">
-                  {selectedDeck.deck[currentCardIndex].Answer}
-                </div>
-              </div>
-            </div>
+            {renderCard()}
 
             <div className="practice-controls">
               <button 
