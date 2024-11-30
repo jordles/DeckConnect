@@ -1,12 +1,13 @@
 .edit-deck-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+  min-height: 100vh;
   padding: 20px;
-  background-color: #f4f4f4;
   max-width: 1200px;
   margin: 0 auto;
-  position: relative;
 }
 
 .saved-card-alert {
@@ -240,4 +241,21 @@
 .media-preview-audio {
   width: 100%;
   margin-top: 10px;
+}
+
+.back-to-decks-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-decks-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }
