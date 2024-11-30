@@ -40,6 +40,10 @@ const CustomDecksPage = () => {
     navigate(`/edit-deck/${deckId}`);
   };
 
+  const handlePracticeDeck = (deckId) => {
+    navigate(`/practice-deck/${deckId}`);
+  };
+
   return (
     <BackgroundAnim color="green" outlineColor="yellow" title="Custom Decks">
       <div className="custom-decks-page">
@@ -91,7 +95,12 @@ const CustomDecksPage = () => {
                 <p>{deck.cards ? deck.cards.length : 0} cards</p>
                 <div className="deck-actions">
                   <button onClick={() => handleEditDeck(deck.id)}>Edit Cards</button>
-                  <button>Practice</button>
+                  <button 
+                    onClick={() => handlePracticeDeck(deck.id)}
+                    disabled={deck.cards.length === 0}
+                  >
+                    Practice
+                  </button>
                 </div>
               </div>
             ))}

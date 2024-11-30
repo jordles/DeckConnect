@@ -10,6 +10,7 @@ import LandingPage from './pages/LandingPage'
 import CustomDecksPage from './pages/CustomDecksPage'
 import PremadeDecksPage from './pages/PremadeDecksPage'
 import EditDeckPage from './pages/EditDeckPage'
+import PracticeDeckPage from './pages/PracticeDeckPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,6 +26,7 @@ function App() {
         <Route path="/edit-deck/:deckId" element={<EditDeckPage />} />
         <Route path="/premade-decks" element={<PremadeDecksPage />} />
         <Route path="/friends" element={<FriendsPage />} />
+        <Route path="/practice-deck/:deckId" element={<PracticeDeckPage />} />
       </Routes>
       {/* <NavBar />  general navbar with conditional for home landing page */}
     </>
