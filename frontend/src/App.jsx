@@ -9,6 +9,7 @@ import CommunityPage from './pages/CommunityPage'
 import LandingPage from './pages/LandingPage'
 import CustomDecksPage from './pages/CustomDecksPage'
 import PremadeDecksPage from './pages/PremadeDecksPage'
+import EditDeckPage from './pages/EditDeckPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +22,7 @@ function App() {
         <Route path="/community" element={<CommunityPage />} />
         <Route path="/decks" element={<DecksPage />} />
         <Route path="/custom-decks" element={<CustomDecksPage />} />
+        <Route path="/edit-deck/:deckId" element={<EditDeckPage />} />
         <Route path="/premade-decks" element={<PremadeDecksPage />} />
         <Route path="/friends" element={<FriendsPage />} />
       </Routes>
