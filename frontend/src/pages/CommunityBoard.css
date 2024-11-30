@@ -1,0 +1,83 @@
+.community-board-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.community,
+.search-deck-section {
+  flex: 1;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.community {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-deck-section {
+  overflow-y: auto;
+  max-height: 300px;
+  padding: 10px;
+}
+
+.community h1 {
+  display: inline;
+  background-color: #d1e7ff;
+  padding: 5px;
+  border-radius: 0 0 15px 15px;
+}
+
+.community p {
+  border: 2px solid #000;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+#search-bar {
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  text-align: center;
+}
+
+#search-bar::placeholder {
+  text-align: center;
+  color: #888;
+}
+
+#deck-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+#deck h3 {
+  margin: 0;
+}
+
+#share-button,
+#export-button {
+  background-color: #ffcccb;
+  display: block;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+.deck-btn-group {
+  flex: 1;
+  margin-left: 3px;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #d1e7ff;
+}
